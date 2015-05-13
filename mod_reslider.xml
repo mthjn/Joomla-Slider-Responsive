@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>MOD_RESLIDER</name>
+	<author>Code 7</author>
+	<creationDate>April 2012</creationDate>
+	<copyright>Copyright (C) 2012 onwards - Code 7</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>tristan@code7.co.uk</authorEmail>
+	<authorURL>http://www.code7.co.uk</authorURL>
+	<version>2.0.8</version>
+	<description>MOD_RESLIDER_DESC</description>
+
+	<files>
+		<filename>mod_reslider.xml</filename>
+		<filename module="mod_reslider">mod_reslider.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+		<folder>language</folder>
+	</files>
+
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_reslider.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_reslider.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="load_jquery" type="radio" default="1" label="MOD_RESLIDER_JQUERY" description="MOD_RESLIDER_JQUERY_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="fadeorslide" type="radio" default="0" label="MOD_RESLIDER_FADE" description="MOD_RESLIDER_FADE_DESC">
+					<option value="0">MOD_RESLIDER_FADE_SLIDE</option>
+					<option value="1">MOD_RESLIDER_FADE_FADE</option>
+				</field>
+				<field name="uselinks" type="radio" default="1" label="MOD_RESLIDER_LINKS" description="MOD_RESLIDER_LINKS_DESC">
+					<option value="0">JYES</option>
+					<option value="1">JNO</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="moreoptions" label="MOD_RESLIDER_MORE_OPTIONS">
+				<field name="directionNav" type="radio" default="0" label="MOD_RESLIDER_DIRECTION_NAV" description="MOD_RESLIDER_DIRECTION_NAV_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="controlNav" type="radio" default="0" label="MOD_RESLIDER_CONTROL_NAV" description="MOD_RESLIDER_CONTROL_NAV_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="keyboardNav" type="radio" default="0" label="MOD_RESLIDER_KEYBOARD" description="MOD_RESLIDER_KEYBOARD_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="direction" type="radio" default="0" label="MOD_RESLIDER_DIRECTION" description="MOD_RESLIDER_DIRECTION_DESC">
+					<option value="1">MOD_RESLIDER_DIRECTION_VERTICAL</option>
+					<option value="0">MOD_RESLIDER_DIRECTION_HORIZONTAL</option>
+				</field>
+				<field name="slidespeed" type="text" default="7000" label="MOD_RESLIDER_SPEED" description="MOD_RESLIDER_SPEED_DESC"/>
+				<field name="animatespeed" type="text" default="600" label="MOD_RESLIDER_ANIM_SPEED" description="MOD_RESLIDER_ANIM_SPEED_DESC"/>
+				<field name="randomorder" type="radio" default="0" label="MOD_RESLIDER_RANDOM" description="MOD_RESLIDER_RANDOM_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="images" label="MOD_RESLIDER_IMAGES_LABEL">
+				<field name="image1" type="media" directory="stories" label="MOD_RESLIDER_IMAGE"/>
+				<field name="image1alt" type="text" default="" label="MOD_RESLIDER_IMAGE_ALT" description="MOD_RESLIDER_IMAGE_ALT"/>
+				<field name="image1cap" type="textarea" default="" label="MOD_RESLIDER_IMAGE_CAPTION" description="MOD_RESLIDER_IMAGE_CAPTION_DESC" filter="raw"/>
+
+				<field name="image1cap2" type="textarea" default="" label="MOD_RESLIDER_IMAGE_CAPTION" description="MOD_RESLIDER_IMAGE_CAPTION_DESC" filter="raw"/>
+				<field name="image1cap3" type="textarea" default="" label="MOD_RESLIDER_IMAGE_CAPTION" description="MOD_RESLIDER_IMAGE_CAPTION_DESC" filter="raw"/>
+
+
+				<field name="image1link" type="menuitem" default="" label="MOD_RESLIDER_IMAGE_LINK" description="MOD_RESLIDER_IMAGE_LINK_DESC"/>
+				<field name="image1customlink" type="text" default="" label="MOD_RESLIDER_IMAGE_CUSTOM_LINK" description="MOD_RESLIDER_IMAGE_CUSTOM_LINK_DESC"/>
+
+				<field type="spacer" name="myspacer" hr="true" />
+
+				<field name="image2" type="media" directory="stories" label="MOD_RESLIDER_IMAGE"/>
+				<field name="image2alt" type="text" default="" label="MOD_RESLIDER_IMAGE_ALT" description="MOD_RESLIDER_IMAGE_ALT"/>
+				<field name="image2cap" type="textarea" default="" label="MOD_RESLIDER_IMAGE_CAPTION" description="MOD_RESLIDER_IMAGE_CAPTION_DESC" filter="raw"/>
+				<field name="image2link" type="menuitem" default="" label="MOD_RESLIDER_IMAGE_LINK" description="MOD_RESLIDER_IMAGE_LINK_DESC"/>
+				<field name="image2customlink" type="text" default="" label="MOD_RESLIDER_IMAGE_CUSTOM_LINK" description="MOD_RESLIDER_IMAGE_CUSTOM_LINK_DESC"/>
+
+				<field type="spacer" name="myspacer2" hr="true" />
+
+				<field name="image3" type="media" directory="stories" label="MOD_RESLIDER_IMAGE"/>
+				<field name="image3alt" type="text" default="" label="MOD_RESLIDER_IMAGE_ALT" description="MOD_RESLIDER_IMAGE_ALT"/>
+				<field name="image3cap" type="textarea" default="" label="MOD_RESLIDER_IMAGE_CAPTION" description="MOD_RESLIDER_IMAGE_CAPTION_DESC" filter="raw"/>
+				<field name="image3link" type="menuitem" default="" label="MOD_RESLIDER_IMAGE_LINK" description="MOD_RESLIDER_IMAGE_LINK_DESC"/>
+				<field name="image3customlink" type="text" default="" label="MOD_RESLIDER_IMAGE_CUSTOM_LINK" description="MOD_RESLIDER_IMAGE_CUSTOM_LINK_DESC"/>
+
+				<field type="spacer" name="myspacer3" hr="true" />
+
+				<field name="image4" type="media" directory="stories" label="MOD_RESLIDER_IMAGE"/>
+				<field name="image4alt" type="text" default="" label="MOD_RESLIDER_IMAGE_ALT" description="MOD_RESLIDER_IMAGE_ALT"/>
+				<field name="image4cap" type="textarea" default="" label="MOD_RESLIDER_IMAGE_CAPTION" description="MOD_RESLIDER_IMAGE_CAPTION_DESC" filter="raw"/>
+				<field name="image4link" type="menuitem" default="" label="MOD_RESLIDER_IMAGE_LINK" description="MOD_RESLIDER_IMAGE_LINK_DESC"/>
+				<field name="image4customlink" type="text" default="" label="MOD_RESLIDER_IMAGE_CUSTOM_LINK" description="MOD_RESLIDER_IMAGE_CUSTOM_LINK_DESC"/>
+
+				<field type="spacer" name="myspacer4" hr="true" />
+
+				<field name="image5" type="media" directory="stories" label="MOD_RESLIDER_IMAGE"/>
+				<field name="image5alt" type="text" default="" label="MOD_RESLIDER_IMAGE_ALT" description="MOD_RESLIDER_IMAGE_ALT"/>
+				<field name="image5cap" type="textarea" default="" label="MOD_RESLIDER_IMAGE_CAPTION" description="MOD_RESLIDER_IMAGE_CAPTION_DESC" filter="raw"/>
+				<field name="image5link" type="menuitem" default="" label="MOD_RESLIDER_IMAGE_LINK" description="MOD_RESLIDER_IMAGE_LINK_DESC"/>
+				<field name="image5customlink" type="text" default="" label="MOD_RESLIDER_IMAGE_CUSTOM_LINK" description="MOD_RESLIDER_IMAGE_CUSTOM_LINK_DESC"/>
+
+				<field type="spacer" name="myspacer5" hr="true" />
+
+				<field name="image6" type="media" directory="stories" label="MOD_RESLIDER_IMAGE"/>
+				<field name="image6alt" type="text" default="" label="MOD_RESLIDER_IMAGE_ALT" description="MOD_RESLIDER_IMAGE_ALT"/>
+				<field name="image6cap" type="textarea" default="" label="MOD_RESLIDER_IMAGE_CAPTION" description="MOD_RESLIDER_IMAGE_CAPTION_DESC" filter="raw"/>
+				<field name="image6link" type="menuitem" default="" label="MOD_RESLIDER_IMAGE_LINK" description="MOD_RESLIDER_IMAGE_LINK_DESC"/>
+				<field name="image6customlink" type="text" default="" label="MOD_RESLIDER_IMAGE_CUSTOM_LINK" description="MOD_RESLIDER_IMAGE_CUSTOM_LINK_DESC"/>
+
+				<field type="spacer" name="myspacer6" hr="true" />
+
+				<field name="image7" type="media" directory="stories" label="MOD_RESLIDER_IMAGE"/>
+				<field name="image7alt" type="text" default="" label="MOD_RESLIDER_IMAGE_ALT" description="MOD_RESLIDER_IMAGE_ALT"/>
+				<field name="image7cap" type="textarea" default="" label="MOD_RESLIDER_IMAGE_CAPTION" description="MOD_RESLIDER_IMAGE_CAPTION_DESC" filter="raw"/>
+				<field name="image7link" type="menuitem" default="" label="MOD_RESLIDER_IMAGE_LINK" description="MOD_RESLIDER_IMAGE_LINK_DESC"/>
+				<field name="image7customlink" type="text" default="" label="MOD_RESLIDER_IMAGE_CUSTOM_LINK" description="MOD_RESLIDER_IMAGE_CUSTOM_LINK_DESC"/>
+
+				<field type="spacer" name="myspacer7" hr="true" />
+
+				<field name="image8" type="media" directory="stories" label="MOD_RESLIDER_IMAGE"/>
+				<field name="image8alt" type="text" default="" label="MOD_RESLIDER_IMAGE_ALT" description="MOD_RESLIDER_IMAGE_ALT"/>
+				<field name="image8cap" type="textarea" default="" label="MOD_RESLIDER_IMAGE_CAPTION" description="MOD_RESLIDER_IMAGE_CAPTION_DESC" filter="raw"/>
+				<field name="image8link" type="menuitem" default="" label="MOD_RESLIDER_IMAGE_LINK" description="MOD_RESLIDER_IMAGE_LINK_DESC"/>
+				<field name="image8customlink" type="text" default="" label="MOD_RESLIDER_IMAGE_CUSTOM_LINK" description="MOD_RESLIDER_IMAGE_CUSTOM_LINK_DESC"/>
+
+				<field type="spacer" name="myspacer8" hr="true" />
+
+				<field name="image9" type="media" directory="stories" label="MOD_RESLIDER_IMAGE"/>
+				<field name="image9alt" type="text" default="" label="MOD_RESLIDER_IMAGE_ALT" description="MOD_RESLIDER_IMAGE_ALT"/>
+				<field name="image9cap" type="textarea" default="" label="MOD_RESLIDER_IMAGE_CAPTION" description="MOD_RESLIDER_IMAGE_CAPTION_DESC" filter="raw"/>
+				<field name="image9link" type="menuitem" default="" label="MOD_RESLIDER_IMAGE_LINK" description="MOD_RESLIDER_IMAGE_LINK_DESC"/>
+				<field name="image9customlink" type="text" default="" label="MOD_RESLIDER_IMAGE_CUSTOM_LINK" description="MOD_RESLIDER_IMAGE_CUSTOM_LINK_DESC"/>
+
+				<field type="spacer" name="myspacer9" hr="true" />
+
+				<field name="image10" type="media" directory="stories" label="MOD_RESLIDER_IMAGE"/>
+				<field name="image10alt" type="text" default="" label="MOD_RESLIDER_IMAGE_ALT" description="MOD_RESLIDER_IMAGE_ALT"/>
+				<field name="image10cap" type="textarea" default="" label="MOD_RESLIDER_IMAGE_CAPTION" description="MOD_RESLIDER_IMAGE_CAPTION_DESC" filter="raw"/>
+				<field name="image10link" type="menuitem" default="" label="MOD_RESLIDER_IMAGE_LINK" description="MOD_RESLIDER_IMAGE_LINK_DESC"/>
+				<field name="image10customlink" type="text" default="" label="MOD_RESLIDER_IMAGE_CUSTOM_LINK" description="MOD_RESLIDER_IMAGE_CUSTOM_LINK_DESC"/>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL"
+				description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+				<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+				description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+				<field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL"
+				description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field name="cache_time" type="text" default="900"
+				label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+				description="COM_MODULES_FIELD_CACHE_TIME_DESC"/>
+				<field name="cachemode" type="hidden" default="itemid">
+					<option value="itemid"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
